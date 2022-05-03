@@ -10,7 +10,7 @@ typedef struct node
 }NODE;
 
 /*큐 자료구조에 데이터 추가*/
-void append(NODE **p_head, int num){ //tail 노드를 받아서 순회없이 바로 접근하여 추가
+void append(NODE **p_head, int num){
     
     NODE *p_tail = *p_head;
     while (NULL != p_tail->p_next)  p_tail = p_tail->p_next;
@@ -43,15 +43,14 @@ int main(){
     append(&p_head,200);
     append(&p_head,300);
 
-    // NODE *p = p_head; // headnode부터 시작
-    // while(p != NULL){
-    //     printf("%d\n",p->num);
-    //     p = p->p_next;
-    // }
-
     int result = leftpop(p_head);
     printf("%d\n",result);
 
-    
+
+    // NODE *p = p_head; // headnode부터 시작
+    // while (p != NULL){
+    //     printf("%d\n",p->num);
+    //     p = p->p_next;
+    // }
 
 }
